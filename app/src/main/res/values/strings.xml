@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Product</string>
+    <string name="login_title">Login</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_login_btn">Login</string>
+    <string name="product_id">Id</string>
+    <string name="product_name">Name</string>
+    <string name="product_description">Description</string>
+    <string name="product_update">Update</string>
+    <string name="product_create">Create</string>
+    <string name="product_delete">Delete</string>
+    <string name="product_selected">Số lượng yêu cầu</string>
+    <string name="product_note">Ghi chú</string>
+    <string name="null_error">Vui lòng điền đủ thông tin</string>
+    <string name="select_max_error">Vui lòng chọn ít hơn %s món</string>
+    <string name="start_order_title">Nhà hàng Bách Khoa</string>
+    <string name="start_order_sub_title">Kính chào quý khách!</string>
+    <string name="start_order_order_btn">Bắt đầu đặt món</string>
+    <string name="ordered_list_ordered">Đã chọn</string>
+    <string name="ordered_list_processing">Đang chế biến</string>
+    <string name="ordered_list_done">Đã chế biến</string>
+    <string name="billing_total_price">Tổng: </string>
+    <string name="billing_table">Bàn: </string>
+    <string name="setting_logout">Đăng xuất</string>
+    <string name="item_food_chef_priority">Độ ưu tiên: </string>
+    <string name="item_food_chef_note">Ghi chú: </string>
+    <string name="item_food_waiter_table">Bàn: </string>
+    <string name="navigate_customer_menu">Menu</string>
+    <string name="navigate_customer_processing">Trạng thái món ăn</string>
+    <string name="navigate_customer_billing">Hóa đơn</string>
+    <string name="navigate_chef_processing">Chế biến</string>
+    <string name="navigate_chef_setting">Cài đặt</string>
+    <string name="navigate_waiter_serve">Phục vụ</string>
+    <string name="navigate_waiter_setting">Cài đặt</string>
+
+</resources>

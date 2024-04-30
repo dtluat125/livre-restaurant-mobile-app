@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_food_chef"
+        android:icon="@drawable/ic_chef"
+        android:title="@string/navigate_chef_processing" />
+    <item
+        android:id="@+id/navigation_setting"
+        android:icon="@drawable/ic_administrator_developer"
+        android:title="@string/navigate_chef_setting" />
+</menu>

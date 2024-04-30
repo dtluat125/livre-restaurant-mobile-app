@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_food_waiter"
+        android:icon="@drawable/ic_restaurant_waiter"
+        android:title="@string/navigate_waiter_serve" />
+    <item
+        android:id="@+id/navigation_setting"
+        android:icon="@drawable/ic_administrator_developer"
+        android:title="@string/navigate_waiter_setting" />
+</menu>

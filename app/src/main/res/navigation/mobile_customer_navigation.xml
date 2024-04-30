@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/startFragment">
+
+
+    <fragment
+        android:id="@+id/navigation_menu"
+        android:name="com.example.android.marsphotos.ui.menu.MenuFragment"
+        android:label="Menu"
+        tools:layout="@layout/fragment_menu"/>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.android.marsphotos.ui.start.login.LoginFragment"
+        android:label=""
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_navigation_processing"
+            app:destination="@id/navigation_processing" />
+        <action
+            android:id="@+id/action_loginFragment_to_navigation_billing"
+            app:destination="@id/navigation_billing" />
+        <action
+            android:id="@+id/action_loginFragment_to_navigation_food_chef"
+            app:destination="@id/navigation_food_chef" />
+        <action
+            android:id="@+id/action_loginFragment_to_startSelectFoodFragment"
+            app:destination="@id/startSelectFoodFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_navigation_food_waiter"
+            app:destination="@id/navigation_food_waiter" />
+        <action
+            android:id="@+id/action_loginFragment_to_navigation_setting"
+            app:destination="@id/navigation_setting" />
+        <action
+            android:id="@+id/action_loginFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.example.android.marsphotos.ui.start.StartFragment"
+        android:label=""
+        tools:layout="@layout/fragment_start">
+        <action
+            android:id="@+id/action_startFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_billingFragment"
+            app:destination="@id/navigation_billing" />
+        <action
+            android:id="@+id/action_startFragment_to_navigation_food_chef"
+            app:destination="@id/navigation_food_chef" />
+        <action
+            android:id="@+id/action_startFragment_to_navigation_processing"
+            app:destination="@id/navigation_processing" />
+        <action
+            android:id="@+id/action_startFragment_to_startSelectFoodFragment"
+            app:destination="@id/startSelectFoodFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_navigation_food_waiter"
+            app:destination="@id/navigation_food_waiter" />
+        <action
+            android:id="@+id/action_startFragment_to_navigation_setting"
+            app:destination="@id/navigation_setting" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_processing"
+        android:name="com.example.android.marsphotos.ui.foodCustomer.FoodCustomerFragment"
+        android:label=""
+        tools:layout="@layout/fragment_food_customer"
+        />
+    <fragment
+        android:id="@+id/navigation_billing"
+        android:name="com.example.android.marsphotos.ui.billing.BillingFragment"
+        android:label="Hóa đơn"
+        tools:layout="@layout/fragment_billing">
+        <action
+            android:id="@+id/action_navigation_billing_to_startSelectFoodFragment"
+            app:destination="@id/startSelectFoodFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_food_chef"
+        android:name="com.example.android.marsphotos.ui.foodChef.FoodChefFragment"
+        android:label=""
+        tools:layout="@layout/list_item_food_chef"/>
+    <fragment
+        android:id="@+id/startSelectFoodFragment"
+        android:name="com.example.android.marsphotos.ui.startSelectFood.StartSelectFoodFragment"
+        android:label=""
+        tools:layout="@layout/fragment_start_select_food">
+        <action
+            android:id="@+id/action_startSelectFoodFragment_to_navigation_menu"
+            app:destination="@id/navigation_menu" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_food_waiter"
+        android:name="com.example.android.marsphotos.ui.foodWaiter.FoodWaiterFragment"
+        android:label=""
+        tools:layout="@layout/fragment_food_waiter"/>
+    <fragment
+        android:id="@+id/navigation_setting"
+        android:name="com.example.android.marsphotos.ui.setting.SettingFragment"
+        android:label="Setting"
+        tools:layout="@layout/fragment_setting">
+        <action
+            android:id="@+id/action_navigation_setting_to_startFragment"
+            app:destination="@id/startFragment" />
+    </fragment>
+
+</navigation>

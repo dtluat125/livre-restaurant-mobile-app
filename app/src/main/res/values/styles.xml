@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <!-- Text Appearance Subtitle1 style -->
+    <style name="TextAppearance.LunchTray.Subtitle1"
+        parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <!-- TextView style -->
+    <style name="Widget.LunchTray.TextView" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textAppearance">?attr/textAppearanceSubtitle1</item>
+    </style>
+
+    <!-- Radio Button style -->
+    <style name="Widget.LunchTray.CompoundButton.RadioButton"
+        parent="Widget.MaterialComponents.CompoundButton.RadioButton">
+        <item name="android:paddingEnd">@dimen/radio_button_padding</item>
+        <item name="android:paddingStart">@dimen/radio_button_padding</item>
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+    </style>
+
+    <!-- Button Style for Next Button -->
+    <style name="Widget.Order.Button.Cancel"
+        parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">@dimen/side_margin</item>
+        <item name="android:text">@string/cancel</item>
+    </style>
+
+    <!-- Button Style for Next Button -->
+    <style name="Widget.Order.Button.Next" parent="">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/side_margin</item>
+        <item name="android:text">Next</item>
+    </style>
+
+    <!-- TextView Style for Menu Item Info -->
+    <style name="Widget.MenuItem.TextView.Info" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">?attr/textAppearanceBody2</item>
+        <item name="android:paddingStart">@dimen/base_margin</item>
+        <item name="android:paddingEnd">@dimen/base_margin</item>
+        <item name="singleLine">false</item>
+        <item name="android:scrollHorizontally">false</item>
+        <item name="maxLines">5</item>
+    </style>
+
+    <!-- TextView Style for Checkout Item Label -->
+    <style name="Widget.LunchTray.TextView.CheckoutItem.Label"
+        parent="Widget.MaterialComponents.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- TextView Style for Checkout Item Name -->
+    <style name="Widget.LunchTray.TextView.CheckoutItem.Info"
+        parent="Widget.MaterialComponents.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/checkout_item_margin</item>
+        <item name="android:layout_marginBottom">@dimen/checkout_item_margin</item>
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <!-- TextView Style for Subtotal -->
+    <style name="Widget.LunchTray.TextView.Subtotal" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/side_margin</item>
+        <item name="android:textAppearance">?attr/textAppearanceSubtitle1</item>
+    </style>
+
+    <!-- Divider style -->
+    <style name="Widget.LunchTray.Divider" parent="@style/Theme.MarsPhotos">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">?attr/dividerHorizontal</item>
+        <item name="android:layout_marginTop">@dimen/base_margin</item>
+    </style>
+
+    <style name="BaseRadioButtonCustomer">
+        <item name="android:textSize">@dimen/font_size_large</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:button">@null</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="RadioButtonStudio" parent="BaseRadioButtonCustomer">
+        <item name="android:background">@drawable/radio_selector_studio</item>
+        <item name="android:textColor">@drawable/radio_text_color_studio</item>
+    </style>
+    <string name="cancel">Cancel</string>
+
+    <style name="Rounded" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <style name="ButtonCreatorResultAction" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="shapeAppearance">@style/Rounded</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconPadding">7dp</item>
+        <item name="iconTint">@null</item>
+
+    </style>
+
+    <style name="NotifySuccessImage" parent="ButtonCreatorResultAction">
+        <item name="backgroundTint">#D7FFEC</item>
+        <item name="icon">@drawable/ic_checked_1</item>
+        <item name="iconGravity">start</item>
+        <item name="android:textColor">#3E4252</item>
+    </style>
+
+    <style name="NotifyErrorImage" parent="ButtonCreatorResultAction">
+        <item name="backgroundTint">#FFCFD0</item>
+        <item name="icon">@drawable/ic_red_alert</item>
+        <item name="iconGravity">start</item>
+        <item name="android:textColor">#3E4252</item>
+    </style>
+
+    <style name="dialog_button">
+        <item name="android:textStyle">bold</item>
+        <item name="android:minWidth">64dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+    </style>
+
+    <style name="dialog_button.negative">
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:textColor">@color/button_positive_color</item>
+    </style>
+
+    <style name="dialog_button.positive">
+        <item name="android:textColor">@color/button_negative_color</item>
+    </style>
+
+    <style name="Title">
+        <item name="android:textSize">@dimen/font_size_h4</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Subtitle">
+        <item name="android:textSize">@dimen/font_size_h5</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+</resources>

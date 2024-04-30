@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.example.android.marsphotos.ui.foodChef.FoodChefViewModel" />
+
+        <variable
+            name="foodItem"
+            type="com.example.android.marsphotos.data.db.entity.FoodItem" />
+
+        <variable
+            name="index"
+            type="Integer" />
+
+        <variable
+            name="itemFoodActionListener"
+            type="com.example.android.marsphotos.ui.foodChef.ItemFoodActionListener" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="10dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imgIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:food_chef_img="@{foodItem.food.foodImg.url}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@drawable/ic_ice_cream" />
+
+                <TextView
+                    android:id="@+id/foodName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:singleLine="true"
+                    android:textSize="18sp"
+                    app:food_chef_name="@{foodItem.food.foodName}"
+                    app:layout_constraintStart_toEndOf="@+id/imgIcon"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Display name" />
+
+                <TextView
+                    android:id="@+id/foodPriorityLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:singleLine="true"
+                    android:text="@string/item_food_chef_priority"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@+id/imgIcon"
+                    app:layout_constraintTop_toBottomOf="@+id/foodName" />
+
+                <TextView
+                    android:id="@+id/foodPriority"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:singleLine="true"
+                    android:textSize="18sp"
+                    app:food_chef_priority="@{foodItem.food.category.priority}"
+                    app:layout_constraintStart_toEndOf="@+id/foodPriorityLabel"
+                    app:layout_constraintTop_toBottomOf="@+id/foodName"
+                    tools:text="Priority" />
+
+                <TextView
+                    android:id="@+id/foodNoteLabel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:singleLine="true"
+                    android:text="@string/item_food_chef_note"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@+id/imgIcon"
+                    app:layout_constraintTop_toBottomOf="@+id/foodPriority" />
+
+                <TextView
+                    android:id="@+id/foodNote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:textSize="18sp"
+                    app:food_chef_note="@{foodItem.note}"
+                    app:layout_constraintStart_toEndOf="@+id/foodNoteLabel"
+                    app:layout_constraintTop_toBottomOf="@+id/foodPriority"
+                    tools:text="Note" />
+
+                <TextView
+                    android:id="@+id/foodQuantity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:singleLine="true"
+                    android:textSize="18sp"
+                    app:food_chef_quantity="@{foodItem.quantity}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Quantity" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <FrameLayout
+            android:id="@+id/rightSwipe"
+            android:layout_width="1000dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="12dp">
+
+            <!-- Put your menu items here. The first one will be shown at the horizontal start. -->
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="75dp"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:padding="7dp"
+                        android:background="@drawable/round_circle_processing"
+                        android:src="@drawable/ic_arrow"
+                        android:layout_marginRight="15dp"
+                        android:onClick="@{() -> itemFoodActionListener.clickAction(foodItem)}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </FrameLayout>
+        </FrameLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
