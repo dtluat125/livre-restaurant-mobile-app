@@ -18,7 +18,7 @@ import kotlinx.coroutines.launch
 
 class FoodViewModelFactory(private val myUserID: String) :
     ViewModelProvider.Factory {
-    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return FoodViewModel(myUserID) as T
     }
 }

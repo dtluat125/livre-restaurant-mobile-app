@@ -30,6 +30,7 @@ class StartViewModel : DefaultViewModel() {
 
     fun setupProfile() {
         viewModelScope.launch {
+            Log.v("ON SETUP PROFILE", SharedPreferencesUtil.getUserID(App.application.applicationContext).toString())
             try {
                 repository.loadUser(
                     SharedPreferencesUtil.getUserID(App.application.applicationContext).orEmpty()

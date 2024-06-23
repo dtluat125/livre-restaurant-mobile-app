@@ -5,6 +5,7 @@ import com.example.android.marsphotos.data.db.remote.FirebaseAuthSource
 import com.example.android.marsphotos.data.db.remote.FirebaseAuthStateObserver
 import com.example.android.marsphotos.data.Result
 import com.google.firebase.auth.FirebaseUser
+import android.util.Log
 
 class AuthRepository{
     private val firebaseAuthService = FirebaseAuthSource()
@@ -18,6 +19,7 @@ class AuthRepository{
         firebaseAuthService.loginWithEmailAndPassword(login).addOnSuccessListener {
             b.invoke(Result.Success(it.user))
         }.addOnFailureListener {
+            Log.v("Error", it.toString())
             b.invoke(Result.Error(msg = it.message))
         }
     }

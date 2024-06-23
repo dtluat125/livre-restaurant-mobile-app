@@ -17,7 +17,7 @@ import com.example.android.marsphotos.data.constant.POSITION_TYPE
 import com.example.android.marsphotos.databinding.FragmentStartBinding
 import com.example.android.marsphotos.util.SharedPreferencesUtil
 
-class StartFragment : Fragment() {
+    class StartFragment : Fragment() {
 
     private val viewModel by viewModels<StartViewModel>()
     private lateinit var viewDataBinding: FragmentStartBinding

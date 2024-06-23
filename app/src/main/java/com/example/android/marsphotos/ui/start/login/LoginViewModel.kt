@@ -40,6 +40,7 @@ class LoginViewModel : DefaultViewModel() {
 
         authRepository.loginUser(login) { result: Result<FirebaseUser> ->
             onResult(null, result)
+            Log.v("RESULT", result.toString())
             if (result is Result.Success) {
                 _isLoggedInEvent.value = Event(result.data!!)
                 this.setupProfile()
@@ -63,11 +64,14 @@ class LoginViewModel : DefaultViewModel() {
 
     private fun setupProfile() {
         viewModelScope.launch {
+            Log.v("Login View Model Setup", SharedPreferencesUtil.getUserID(App.application.applicationContext).toString())
             try {
                 repository.loadUser(
                     SharedPreferencesUtil.getUserID(App.application.applicationContext).orEmpty()
                 ) { result: Result<User> ->
+                    Log.v("load user result", result.toString())
                     if (result is Result.Success) {
+                        Log.v("success result", result.data.toString())
                         _position.value = result.data?.info?.position
                         result.data?.let {
                             SharedPreferencesUtil.saveUser(
@@ -76,11 +80,14 @@ class LoginViewModel : DefaultViewModel() {
                             )
                         }
                     } else {
+                        Log.v("fail result", result.toString())
+
                         _message.value = "Error when get data!"
                         _response.value = RESPONSE_TYPE.fail
                     }
                 }
             } catch (e: Exception) {
+                Log.v("error", e.toString())
                 Log.e("error", e.toString())
                 _message.value = e.toString()
                 _response.value = RESPONSE_TYPE.fail

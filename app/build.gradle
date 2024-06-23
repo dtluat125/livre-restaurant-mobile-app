@@ -17,6 +17,25 @@ android {
         multiDexEnabled true
     }
 
+    flavorDimensions "default"
+    productFlavors {
+        app1 {
+            applicationId "com.example.myapp.app1"
+            versionNameSuffix "-app1"
+            resValue "string", "app_name", "App 1"
+        }
+        app2 {
+            applicationId "com.example.myapp.app2"
+            versionNameSuffix "-app2"
+            resValue "string", "app_name", "App 2"
+        }
+        app3 {
+            applicationId "com.example.myapp.app3"
+            versionNameSuffix "-app3"
+            resValue "string", "app_name", "App 3"
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled true
@@ -72,11 +91,17 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:20.0.5'
     implementation 'com.google.firebase:firebase-auth:21.0.6'
     implementation 'com.google.firebase:firebase-storage:20.0.1'
+    implementation("com.google.firebase:firebase-firestore")
     implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation("com.google.firebase:firebase-analytics")
+
 
     // Swipe Layout
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
 
     // circle image view
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
+
 }

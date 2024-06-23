@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.example.myapp.app2",
+  "variantName": "app2Debug",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 1,
+      "versionName": "1.0-app2",
+      "outputFile": "app-app2-debug.apk"
+    }
+  ],
+  "elementType": "File"
+}

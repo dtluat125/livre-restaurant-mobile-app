@@ -22,7 +22,7 @@ import kotlinx.coroutines.launch
 
 class BillingViewModelFactory(private val myUserID: String) :
     ViewModelProvider.Factory {
-     fun <T : ViewModel?> create(modelClass: Class<T>): T {
+     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return BillingViewModel(myUserID) as T
     }
 }

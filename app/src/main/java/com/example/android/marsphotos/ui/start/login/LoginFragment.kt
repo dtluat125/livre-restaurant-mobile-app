@@ -59,6 +59,7 @@ class LoginFragment : Fragment() {
             })
 
         viewModel.isLoggedInEvent.observe(viewLifecycleOwner, EventObserver {
+            Log.v("ON LOGGED IN", it.uid.toString())
             SharedPreferencesUtil.saveUserID(requireContext(), it.uid)
         })
 

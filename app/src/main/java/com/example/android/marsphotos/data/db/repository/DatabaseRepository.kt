@@ -7,6 +7,7 @@ import com.example.android.marsphotos.data.constant.TYPE_DISH_LIST
 import com.example.android.marsphotos.data.db.entity.*
 import com.example.android.marsphotos.util.wrapSnapshotToArrayList
 import com.example.android.marsphotos.util.wrapSnapshotToClass
+import android.util.Log
 
 
 class DatabaseRepository {
@@ -50,6 +51,7 @@ class DatabaseRepository {
     //region Load Single
 
     fun loadUser(userID: String, b: ((Result<User>) -> Unit)) {
+        Log.v("loadUserTask", userID)
         firebaseDatabaseService.loadUserTask(userID).addOnSuccessListener {
             b.invoke(Result.Success(wrapSnapshotToClass(User::class.java, it)))
         }.addOnFailureListener { b.invoke(Result.Error(it.message)) }

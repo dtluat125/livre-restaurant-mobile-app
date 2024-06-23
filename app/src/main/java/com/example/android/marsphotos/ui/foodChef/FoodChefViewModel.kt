@@ -18,7 +18,7 @@ import java.util.*
 
 class FoodChefViewModelFactory(private val myUserID: String) :
     ViewModelProvider.Factory {
-    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return FoodChefViewModel(myUserID) as T
     }
 }
@@ -65,7 +65,7 @@ class FoodChefViewModel(private val myUserID: String) : DefaultViewModel() {
 
     fun changeStatusFood(food: FoodItem) {
         Log.i("tesss","foodItem: "+ food)
-        viewModelScope.launch {
+ viewModelScope.launch {
             try {
                 val bodyFoodListRemove = _foodList.value?.filter {
                     it.billingId === food.billingId && (it.foodId !== food.food.id || it.updatedAt !== food.updatedAt)
