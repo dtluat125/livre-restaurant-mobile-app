@@ -39,8 +39,9 @@ class LoginViewModel : DefaultViewModel() {
         val login = Login(emailText.value!!, passwordText.value!!)
 
         authRepository.loginUser(login) { result: Result<FirebaseUser> ->
+            Log.v("RESULT 1", result.toString())
             onResult(null, result)
-            Log.v("RESULT", result.toString())
+            Log.v("RESULT 2", result.toString())
             if (result is Result.Success) {
                 _isLoggedInEvent.value = Event(result.data!!)
                 this.setupProfile()

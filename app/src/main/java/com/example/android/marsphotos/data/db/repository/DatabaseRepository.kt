@@ -8,6 +8,7 @@ import com.example.android.marsphotos.data.db.entity.*
 import com.example.android.marsphotos.util.wrapSnapshotToArrayList
 import com.example.android.marsphotos.util.wrapSnapshotToClass
 import android.util.Log
+import com.google.firebase.auth.FirebaseAuth
 
 
 class DatabaseRepository {
@@ -53,8 +54,11 @@ class DatabaseRepository {
     fun loadUser(userID: String, b: ((Result<User>) -> Unit)) {
         Log.v("loadUserTask", userID)
         firebaseDatabaseService.loadUserTask(userID).addOnSuccessListener {
+            Log.v("Load task success", it.toString())
             b.invoke(Result.Success(wrapSnapshotToClass(User::class.java, it)))
-        }.addOnFailureListener { b.invoke(Result.Error(it.message)) }
+        }.addOnFailureListener {
+            Log.v("Load task error", it.message.toString())
+            b.invoke(Result.Error(it.message)) }
     }
 
     fun loadUserInfo(userID: String, b: ((Result<UserInfo>) -> Unit)) {

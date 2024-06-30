@@ -16,12 +16,25 @@ class AuthRepository{
 
     fun loginUser(login: Login, b: (Result<FirebaseUser>) -> Unit) {
         b.invoke(Result.Loading)
+        Log.v("Login", login.toString())
         firebaseAuthService.loginWithEmailAndPassword(login).addOnSuccessListener {
+            Log.v("AuthResult", it.user.toString())
             b.invoke(Result.Success(it.user))
         }.addOnFailureListener {
             Log.v("Error", it.toString())
-            b.invoke(Result.Error(msg = it.message))
-        }
+            b.invoke(Result.Error(msg = it.message))}
+
+//        firebaseAuthService.loginWithEmailAndPassword(login).addOnCompleteListener() {it ->
+//            Log.v("AuthResult", it.result.toString())
+//            if(it.isSuccessful) {
+//                Log.v("user", it.result.user.toString())
+//                b.invoke(Result.Success(it.result.user))
+//            }
+//            else{
+//                Log.v("Error", it.toString())
+//              b.invoke(Result.Error(msg = it.exception?.message))
+//            }
+//        }
     }
 
     fun logoutUser() {

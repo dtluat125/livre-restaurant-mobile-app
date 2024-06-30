@@ -110,6 +110,7 @@ class BillingViewModel(private val myUserID: String) : DefaultViewModel() {
         viewModelScope.launch {
             try {
                 val billing = SharedPreferencesUtil.getBilling(App.application.applicationContext)
+                Log.v("Billing", billing.toString())
                 if (billing != null) {
                     dbRepository.loadFoodOfBillings(billing.id) { result: Result<BillingInfo> ->
                         if (result is Result.Success) {
@@ -117,6 +118,7 @@ class BillingViewModel(private val myUserID: String) : DefaultViewModel() {
                             if (foodTotal == null) {
                                 foodTotal = arrayListOf()
                             }
+                            Log.v("Load food result", result.data?.foods.toString())
                             result.data?.foods?.foodProcessings?.forEach {
                                 var found = false
                                 for (index in foodTotal.indices) {
